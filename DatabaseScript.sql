@@ -192,3 +192,30 @@ INSERT INTO rating (mov_id, rev_id, rev_stars, num_o_ratings) VALUES (3, 2, 8, 4
 INSERT INTO rating (mov_id, rev_id, rev_stars, num_o_ratings) VALUES (4, 3, 3, 1)
 
 ------ Create store procedure ------
+
+
+--=> thêm cột hình ảnh vào bảng đạo diễn
+ALTER TABLE director ADD dir_image varchar;
+
+--=> thêm cột hình ảnh vào bảng diễn viên
+ALTER TABLE actor ADD act_image varchar;
+
+--=> thêm cột hình ảnh vào bảng phim
+ALTER TABLE movie ADD mov_image varchar;
+GO
+
+-- Tao bảng user
+CREATE TABLE users
+(
+	user_id INT IDENTITY(1,1) PRIMARY KEY,
+	user_name CHAR(30),
+	user_password CHAR(30),
+	user_type CHAR(15)
+)
+GO
+
+-- Tạo data cho user
+INSERT INTO users (user_name, user_password, user_type) VALUES ('admin', 'admin', 'admin')
+INSERT INTO users (user_name, user_password, user_type) VALUES ('reviewer', 'reviewer', 'reviewer')
+INSERT INTO users (user_name, user_password, user_type) VALUES ('director', 'director', 'director')
+INSERT INTO users (user_name, user_password, user_type) VALUES ('actor', 'actor', 'actor')

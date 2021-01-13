@@ -51,10 +51,9 @@
             this.txbUsername.LineIdleColor = System.Drawing.Color.SeaGreen;
             this.txbUsername.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(230)))), ((int)(((byte)(94)))));
             this.txbUsername.LineThickness = 3;
-            this.txbUsername.Location = new System.Drawing.Point(174, 103);
-            this.txbUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.txbUsername.Location = new System.Drawing.Point(130, 84);
             this.txbUsername.Name = "txbUsername";
-            this.txbUsername.Size = new System.Drawing.Size(379, 33);
+            this.txbUsername.Size = new System.Drawing.Size(284, 27);
             this.txbUsername.TabIndex = 1;
             this.txbUsername.Text = "Username";
             this.txbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -71,10 +70,9 @@
             this.txbPassword.LineIdleColor = System.Drawing.Color.SeaGreen;
             this.txbPassword.LineMouseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(230)))), ((int)(((byte)(94)))));
             this.txbPassword.LineThickness = 3;
-            this.txbPassword.Location = new System.Drawing.Point(174, 216);
-            this.txbPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txbPassword.Location = new System.Drawing.Point(130, 176);
             this.txbPassword.Name = "txbPassword";
-            this.txbPassword.Size = new System.Drawing.Size(379, 33);
+            this.txbPassword.Size = new System.Drawing.Size(284, 27);
             this.txbPassword.TabIndex = 2;
             this.txbPassword.Text = "password";
             this.txbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -85,14 +83,17 @@
             this.cbbUserType.BorderRadius = 3;
             this.cbbUserType.DisabledColor = System.Drawing.Color.Gray;
             this.cbbUserType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(230)))), ((int)(((byte)(94)))));
-            this.cbbUserType.Items = new string[0];
-            this.cbbUserType.Location = new System.Drawing.Point(174, 338);
-            this.cbbUserType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbbUserType.Items = new string[] {
+        "admin",
+        "reviewer",
+        "director",
+        "actor"};
+            this.cbbUserType.Location = new System.Drawing.Point(130, 275);
             this.cbbUserType.Name = "cbbUserType";
             this.cbbUserType.NomalColor = System.Drawing.Color.SeaGreen;
             this.cbbUserType.onHoverColor = System.Drawing.Color.SeaGreen;
             this.cbbUserType.selectedIndex = -1;
-            this.cbbUserType.Size = new System.Drawing.Size(379, 43);
+            this.cbbUserType.Size = new System.Drawing.Size(284, 35);
             this.cbbUserType.TabIndex = 3;
             // 
             // btnLogin
@@ -113,12 +114,13 @@
             this.btnLogin.IdleFillColor = System.Drawing.Color.White;
             this.btnLogin.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnLogin.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnLogin.Location = new System.Drawing.Point(174, 445);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(5);
+            this.btnLogin.Location = new System.Drawing.Point(130, 362);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(181, 41);
+            this.btnLogin.Size = new System.Drawing.Size(136, 33);
             this.btnLogin.TabIndex = 6;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnRegister
             // 
@@ -138,45 +140,49 @@
             this.btnRegister.IdleFillColor = System.Drawing.Color.White;
             this.btnRegister.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnRegister.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnRegister.Location = new System.Drawing.Point(372, 445);
-            this.btnRegister.Margin = new System.Windows.Forms.Padding(5);
+            this.btnRegister.Location = new System.Drawing.Point(279, 362);
+            this.btnRegister.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(181, 41);
+            this.btnRegister.Size = new System.Drawing.Size(136, 33);
             this.btnRegister.TabIndex = 7;
             this.btnRegister.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // bunifuCustomLabel1
             // 
             this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(171, 82);
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(128, 67);
+            this.bunifuCustomLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(73, 17);
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(55, 13);
             this.bunifuCustomLabel1.TabIndex = 8;
             this.bunifuCustomLabel1.Text = "Username";
             // 
             // bunifuCustomLabel2
             // 
             this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(171, 195);
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(128, 158);
+            this.bunifuCustomLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(69, 17);
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(53, 13);
             this.bunifuCustomLabel2.TabIndex = 9;
             this.bunifuCustomLabel2.Text = "Password";
             // 
             // bunifuCustomLabel3
             // 
             this.bunifuCustomLabel3.AutoSize = true;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(171, 317);
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(128, 258);
+            this.bunifuCustomLabel3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(137, 17);
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(74, 13);
             this.bunifuCustomLabel3.TabIndex = 10;
-            this.bunifuCustomLabel3.Text = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Text = "Loại tài khoản";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 645);
+            this.ClientSize = new System.Drawing.Size(562, 524);
             this.Controls.Add(this.bunifuCustomLabel3);
             this.Controls.Add(this.bunifuCustomLabel2);
             this.Controls.Add(this.bunifuCustomLabel1);
@@ -185,6 +191,7 @@
             this.Controls.Add(this.cbbUserType);
             this.Controls.Add(this.txbPassword);
             this.Controls.Add(this.txbUsername);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -47,43 +47,43 @@ GO
 CREATE TABLE actor
 (
 	act_id		INT IDENTITY(1,1) PRIMARY KEY,
-	act_fname	CHAR(20)	NULL,
-	act_lname	CHAR(20)	NULL,
-	act_gender	CHAR(1)		NULL
+	act_fname	VARCHAR(20)	NULL,
+	act_lname	VARCHAR(20)	NULL,
+	act_gender	VARCHAR(1)		NULL
 )
 GO
 
 CREATE TABLE movie 
 (
 	mov_id				INT IDENTITY(1,1) PRIMARY KEY,
-	mov_title			CHAR(50)	NULL,
+	mov_title			VARCHAR(50)	NULL,
 	mov_year			INT			NULL,
 	mov_time			INT			NULL,
-	mov_lang			CHAR(50)	NULL,
+	mov_lang			VARCHAR(50)	NULL,
 	mov_dt_rel			DATE		NULL,
-	mov_rel_country		CHAR(5)		NULL
+	mov_rel_country		VARCHAR(5)		NULL
 )
 GO
 
 CREATE TABLE director
 (
 	dir_id		INT IDENTITY(1,1) PRIMARY KEY,
-	dir_fname	CHAR(20)	NULL,
-	dir_lname	CHAR(20)	NULL,
+	dir_fname	VARCHAR(20)	NULL,
+	dir_lname	VARCHAR(20)	NULL,
 )
 GO
 
 CREATE TABLE genres
 (
 	gen_id		INT IDENTITY(1,1) PRIMARY KEY,
-	gen_title	CHAR(20)	NULL,
+	gen_title	VARCHAR(20)	NULL,
 )
 GO
 
 CREATE TABLE reviewer
 (
 	rev_id		INT IDENTITY(1,1) PRIMARY KEY,
-	rev_name	CHAR(30)	NULL,
+	rev_name	VARCHAR(30)	NULL,
 )
 GO
 
@@ -91,7 +91,7 @@ CREATE TABLE movie_cast
 (
 	act_id		INT, 
 	mov_id		INT,
-	role		CHAR(30),
+	role		VARCHAR(30),
 	PRIMARY KEY (act_id, mov_id),
 )
 GO
@@ -207,10 +207,10 @@ GO
 -- Tao bảng user
 CREATE TABLE users
 (
-	user_id INT IDENTITY(1,1) PRIMARY KEY,
-	user_name CHAR(30),
-	user_password CHAR(30),
-	user_type CHAR(15)
+	user_id			INT IDENTITY(1,1) PRIMARY KEY,
+	user_name		VARCHAR(30),
+	user_password	VARCHAR(30),
+	user_type		VARCHAR(15)
 )
 GO
 

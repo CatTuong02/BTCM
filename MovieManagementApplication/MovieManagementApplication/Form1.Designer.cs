@@ -55,7 +55,7 @@
             this.txbUsername.Name = "txbUsername";
             this.txbUsername.Size = new System.Drawing.Size(284, 27);
             this.txbUsername.TabIndex = 1;
-            this.txbUsername.Text = "Username";
+            this.txbUsername.Text = "admin";
             this.txbUsername.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // txbPassword
@@ -74,7 +74,7 @@
             this.txbPassword.Name = "txbPassword";
             this.txbPassword.Size = new System.Drawing.Size(284, 27);
             this.txbPassword.TabIndex = 2;
-            this.txbPassword.Text = "password";
+            this.txbPassword.Text = "admin";
             this.txbPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // cbbUserType

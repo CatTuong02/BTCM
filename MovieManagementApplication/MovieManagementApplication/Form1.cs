@@ -26,11 +26,21 @@ namespace MovieManagementApplication
             string password = txbPassword.Text;
 
             // Kiem tra user co ton tai trong database hay khong
-            bool hasUser = db.users.Any(x => x.user_name == username && x.user_password == password);
-            if (hasUser == true)
+            user user = db.users.FirstOrDefault(x => x.user_name == username && x.user_password == password);
+            if (user != null)
             {
                 MessageBox.Show("Đăng nhập thành công");
-                // TODO: Mo form menu
+
+                MenuForm  menuForm = new MenuForm(user.user_avatar, user.user_name);
+                menuForm.CloseAction = () =>
+                {
+                    menuForm.Close();
+                    this.Show();
+                };
+
+                this.Hide();
+                menuForm.Show();
+
             }
             else
             {

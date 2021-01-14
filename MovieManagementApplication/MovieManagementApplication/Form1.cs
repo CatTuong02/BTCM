@@ -1,7 +1,7 @@
-﻿using System;
+﻿using MovieManagementApplication.Database;
+using System;
 using System.Linq;
 using System.Windows.Forms;
-using MovieManagementApplication.Database;
 
 namespace MovieManagementApplication
 {
@@ -12,11 +12,6 @@ namespace MovieManagementApplication
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -31,7 +26,9 @@ namespace MovieManagementApplication
             {
                 MessageBox.Show("Đăng nhập thành công");
 
-                MenuForm  menuForm = new MenuForm(user.user_avatar, user.user_name);
+                MenuForm menuForm = new MenuForm();
+                menuForm.avatarPath = user.user_avatar;
+                menuForm.userName = user.user_name;
                 menuForm.CloseAction = () =>
                 {
                     menuForm.Close();
@@ -79,6 +76,14 @@ namespace MovieManagementApplication
                 {
                     MessageBox.Show("Đăng ký thất bại");
                 }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Bạn có muốn thoát chương trình hay không?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                Application.Exit();
             }
         }
     }

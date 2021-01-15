@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="movieModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MovieModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="actor">
           <Key>
             <PropertyRef Name="act_id" />
@@ -94,7 +94,6 @@
           <Property Name="user_name" Type="varchar" MaxLength="30" />
           <Property Name="user_password" Type="varchar" MaxLength="30" />
           <Property Name="user_type" Type="varchar" MaxLength="15" />
-          <Property Name="user_avatar" Type="varchar" MaxLength="1" />
         </EntityType>
         <Association Name="FK__movie_cas__act_i__33D4B598">
           <End Role="actor" Type="Self.actor" Multiplicity="1" />
@@ -192,7 +191,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="movieModelStoreContainer">
+        <EntityContainer Name="MovieModelStoreContainer">
           <EntitySet Name="actor" EntityType="Self.actor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="director" EntityType="Self.director" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="genres" EntityType="Self.genres" Schema="dbo" store:Type="Tables" />
@@ -239,7 +238,7 @@
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="movieModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MovieModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="actor">
           <Key>
             <PropertyRef Name="act_id" />
@@ -325,7 +324,6 @@
           <Property Name="user_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="user_password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="user_type" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="user_avatar" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__movie_cas__act_i__33D4B598">
           <End Role="actor" Type="Self.actor" Multiplicity="1" />
@@ -422,9 +420,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="movieModelStoreContainer" CdmEntityContainer="MovieEntities">
+        <EntityContainerMapping StorageEntityContainer="MovieModelStoreContainer" CdmEntityContainer="MovieEntities">
           <EntitySetMapping Name="actors">
-            <EntityTypeMapping TypeName="movieModel.actor">
+            <EntityTypeMapping TypeName="MovieModel.actor">
               <MappingFragment StoreEntitySet="actor">
                 <ScalarProperty Name="act_id" ColumnName="act_id" />
                 <ScalarProperty Name="act_fname" ColumnName="act_fname" />
@@ -435,7 +433,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="directors">
-            <EntityTypeMapping TypeName="movieModel.director">
+            <EntityTypeMapping TypeName="MovieModel.director">
               <MappingFragment StoreEntitySet="director">
                 <ScalarProperty Name="dir_id" ColumnName="dir_id" />
                 <ScalarProperty Name="dir_fname" ColumnName="dir_fname" />
@@ -445,7 +443,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="genres">
-            <EntityTypeMapping TypeName="movieModel.genre">
+            <EntityTypeMapping TypeName="MovieModel.genre">
               <MappingFragment StoreEntitySet="genres">
                 <ScalarProperty Name="gen_id" ColumnName="gen_id" />
                 <ScalarProperty Name="gen_title" ColumnName="gen_title" />
@@ -453,7 +451,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="movies">
-            <EntityTypeMapping TypeName="movieModel.movie">
+            <EntityTypeMapping TypeName="MovieModel.movie">
               <MappingFragment StoreEntitySet="movie">
                 <ScalarProperty Name="mov_id" ColumnName="mov_id" />
                 <ScalarProperty Name="mov_title" ColumnName="mov_title" />
@@ -467,7 +465,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="movie_cast">
-            <EntityTypeMapping TypeName="movieModel.movie_cast">
+            <EntityTypeMapping TypeName="MovieModel.movie_cast">
               <MappingFragment StoreEntitySet="movie_cast">
                 <ScalarProperty Name="act_id" ColumnName="act_id" />
                 <ScalarProperty Name="mov_id" ColumnName="mov_id" />
@@ -476,7 +474,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ratings">
-            <EntityTypeMapping TypeName="movieModel.rating">
+            <EntityTypeMapping TypeName="MovieModel.rating">
               <MappingFragment StoreEntitySet="rating">
                 <ScalarProperty Name="mov_id" ColumnName="mov_id" />
                 <ScalarProperty Name="rev_id" ColumnName="rev_id" />
@@ -486,7 +484,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="reviewers">
-            <EntityTypeMapping TypeName="movieModel.reviewer">
+            <EntityTypeMapping TypeName="MovieModel.reviewer">
               <MappingFragment StoreEntitySet="reviewer">
                 <ScalarProperty Name="rev_id" ColumnName="rev_id" />
                 <ScalarProperty Name="rev_name" ColumnName="rev_name" />
@@ -494,9 +492,8 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="movieModel.user">
+            <EntityTypeMapping TypeName="MovieModel.user">
               <MappingFragment StoreEntitySet="users">
-                <ScalarProperty Name="user_avatar" ColumnName="user_avatar" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="user_name" ColumnName="user_name" />
                 <ScalarProperty Name="user_password" ColumnName="user_password" />
@@ -504,7 +501,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <AssociationSetMapping Name="movie_direction" TypeName="movieModel.movie_direction" StoreEntitySet="movie_direction">
+          <AssociationSetMapping Name="movie_direction" TypeName="MovieModel.movie_direction" StoreEntitySet="movie_direction">
             <EndProperty Name="director">
               <ScalarProperty Name="dir_id" ColumnName="dir_id" />
             </EndProperty>
@@ -512,7 +509,7 @@
               <ScalarProperty Name="mov_id" ColumnName="mov_id" />
             </EndProperty>
           </AssociationSetMapping>
-          <AssociationSetMapping Name="movie_genres" TypeName="movieModel.movie_genres" StoreEntitySet="movie_genres">
+          <AssociationSetMapping Name="movie_genres" TypeName="MovieModel.movie_genres" StoreEntitySet="movie_genres">
             <EndProperty Name="genres">
               <ScalarProperty Name="gen_id" ColumnName="gen_id" />
             </EndProperty>

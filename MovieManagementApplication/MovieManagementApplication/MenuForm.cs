@@ -31,12 +31,9 @@ namespace MovieManagementApplication
             InitUI();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình hay không?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
     }
 }

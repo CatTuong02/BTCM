@@ -119,6 +119,12 @@
     <Compile Include="UCActorManagement.Designer.cs">
       <DependentUpon>UCActorManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCDirectorManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDirectorManagement.Designer.cs">
+      <DependentUpon>UCDirectorManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMovieManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="UCActorManagement.resx">
       <DependentUpon>UCActorManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCDirectorManagement.resx">
+      <DependentUpon>UCDirectorManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UCMovieManagement.resx">
       <DependentUpon>UCMovieManagement.cs</DependentUpon>

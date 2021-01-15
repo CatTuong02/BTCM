@@ -1,6 +1,8 @@
-﻿namespace MovieManagementApplication
+﻿using System.Windows.Forms;
+
+namespace MovieManagementApplication
 {
-    partial class UCActorManagement
+    partial class UCActorManagement : UserControl
     {
         /// <summary> 
         /// Required designer variable.

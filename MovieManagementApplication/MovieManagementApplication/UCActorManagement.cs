@@ -20,7 +20,88 @@ namespace MovieManagementApplication
             dataGridViewActor.DataSource = actors;
         }
 
+        private void ReloadDataGird()
+        {
+            dataGridViewActor.Columns.Clear();
+            List<actor> actors = db.actors.ToList();
+            dataGridViewActor.DataSource = actors;
+        }
+
+        private void dataGridViewMovie_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dataGridViewActor.Rows[e.RowIndex];
+                txbActorId.Text = row.Cells[0].Value.ToString();
+                txbActorFirstName.Text = row.Cells[1].Value.ToString();
+                txbActorLastName.Text = row.Cells[2].Value.ToString();
+
+                if (row.Cells[3].Value.ToString() == "M")
+                {
+                    cbbActorGender.selectedIndex = 0;
+                }
+                else
+                {
+                    cbbActorGender.selectedIndex = 1;
+                }
+            }
+        }
+
+        public bool CheckUserRoleForActorPage()
+        {
+            UserType userType = Constants.GetUserType();
+            switch (userType)
+            {
+                case UserType.Admin:
+                    return true;
+
+                case UserType.Reviewer:
+                case UserType.Actor:
+                case UserType.Director:
+                default:
+                    return false;
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForActorPage())
+            {
+                AddActor();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được thêm actor mới");
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            bool canUpdateActor = CheckUserRoleForActorPage();
+            if (canUpdateActor == true)
+            {
+                UpdateActor();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được sửa actor");
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            bool canDeleteActor = CheckUserRoleForActorPage();
+            if (canDeleteActor == true)
+            {
+                DeleteActor();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được xoá actor");
+            }
+        }
+
+        public void AddActor()
         {
             if (txbActorFirstName.Text == ""
                 || txbActorLastName.Text == ""
@@ -48,7 +129,7 @@ namespace MovieManagementApplication
             }
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void UpdateActor()
         {
             int actorId = Convert.ToInt32(txbActorId.Text);
 
@@ -86,7 +167,7 @@ namespace MovieManagementApplication
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void DeleteActor()
         {
             int actorId = Convert.ToInt32(txbActorId.Text);
 
@@ -109,33 +190,6 @@ namespace MovieManagementApplication
                 catch (Exception)
                 {
                     MessageBox.Show("Xoá không thành công");
-                }
-            }
-        }
-
-        private void ReloadDataGird()
-        {
-            dataGridViewActor.Columns.Clear();
-            List<actor> actors = db.actors.ToList();
-            dataGridViewActor.DataSource = actors;
-        }
-
-        private void dataGridViewMovie_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dataGridViewActor.Rows[e.RowIndex];
-                txbActorId.Text = row.Cells[0].Value.ToString();
-                txbActorFirstName.Text = row.Cells[1].Value.ToString();
-                txbActorLastName.Text = row.Cells[2].Value.ToString();
-
-                if (row.Cells[3].Value.ToString() == "M")
-                {
-                    cbbActorGender.selectedIndex = 0;
-                }
-                else
-                {
-                    cbbActorGender.selectedIndex = 1;
                 }
             }
         }

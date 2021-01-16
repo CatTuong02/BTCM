@@ -26,9 +26,9 @@ namespace MovieManagementApplication
             {
                 MessageBox.Show("Đăng nhập thành công");
 
+                Constants.currentUser = user;
+
                 MenuForm menuForm = new MenuForm();
-                //menuForm.avatarPath = user.user_avatar;
-                menuForm.userName = user.user_name;
                 menuForm.CloseAction = () =>
                 {
                     menuForm.Close();

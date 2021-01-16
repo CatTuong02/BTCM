@@ -21,7 +21,36 @@ namespace MovieManagementApplication
             dataGridViewGenres.DataSource = genres;
         }
 
+        public bool CheckUserRoleForGenresPage()
+        {
+            UserType userType = Constants.GetUserType();
+            switch (userType)
+            {
+                case UserType.Admin:
+                    return true;
+
+                case UserType.Reviewer:
+                case UserType.Actor:
+                case UserType.Director:
+                default:
+                    return false;
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForGenresPage())
+            {
+                AddGenres();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được thêm thể loại mới");
+            }
+        }
+
+
+        private void AddGenres()
         {
             if (txbGenresTitle.Text == "")
             {
@@ -45,7 +74,20 @@ namespace MovieManagementApplication
             }
         }
 
+
         private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForGenresPage())
+            {
+                UpdateGenres();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được sửa thể loại mới");
+            }
+        }
+
+        private void UpdateGenres()
         {
             int genrerId = Convert.ToInt32(txbGenresId.Text);
 
@@ -64,7 +106,7 @@ namespace MovieManagementApplication
                 {
                     try
                     {
-                        genre.gen_title= txbGenresTitle.Text;
+                        genre.gen_title = txbGenresTitle.Text;
 
                         db.SaveChanges();
                         MessageBox.Show("Sửa thành công");
@@ -80,6 +122,19 @@ namespace MovieManagementApplication
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForGenresPage())
+            {
+                DeleteGenres();
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được xoá thể loại");
+            }
+        }
+
+        private void DeleteGenres()
         {
             int genresId = Convert.ToInt32(txbGenresId.Text);
 
@@ -118,13 +173,6 @@ namespace MovieManagementApplication
             int index = dataGridViewGenres.CurrentCell.RowIndex;
             txbGenresId.Text = dataGridViewGenres.Rows[index].Cells[0].Value.ToString();
             txbGenresTitle.Text = dataGridViewGenres.Rows[index].Cells[1].Value.ToString();
-
-
-
-            //if (e.RowIndex >= 0)
-            //{
-            //    DataGridViewRow row = dataGridViewGenres.Rows[e.RowIndex];
-            //}
         }
     }
 }

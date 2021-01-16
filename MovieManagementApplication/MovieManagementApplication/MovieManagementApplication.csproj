@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Database\actor.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>

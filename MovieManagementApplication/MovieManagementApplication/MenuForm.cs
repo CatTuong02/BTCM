@@ -13,8 +13,6 @@ namespace MovieManagementApplication
     public partial class MenuForm : Form
     {
         public Action CloseAction;
-        public string avatarPath;
-        public string userName;
 
         public MenuForm()
         {
@@ -23,7 +21,7 @@ namespace MovieManagementApplication
 
         private void InitUI()
         {
-            labelUserName.Text = userName;
+            labelUserName.Text = Constants.currentUser.user_name;
         }
 
         private void MenuForm_Load(object sender, EventArgs e)

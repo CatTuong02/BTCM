@@ -14,6 +14,22 @@ namespace MovieManagementApplication
             InitializeComponent();
         }
 
+        private bool CheckUserRoleForDirectorPage()
+        {
+            UserType userType = Constants.GetUserType();
+            switch (userType)
+            {
+                case UserType.Admin:
+                    return true;
+
+                case UserType.Reviewer:
+                case UserType.Actor:
+                case UserType.Director:
+                default:
+                    return false;
+            }
+        }
+
         private void UCDirectorManagement_Load(object sender, EventArgs e)
         {
             List<director> directors = db.directors.ToList();
@@ -21,6 +37,19 @@ namespace MovieManagementApplication
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+            bool canAddDirector = CheckUserRoleForDirectorPage();
+            if (canAddDirector == true)
+            {
+                AddDirector();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được thêm director mới");
+            }
+        }
+
+        private void AddDirector()
         {
             if (txbDirectorFirstName.Text == ""
                 || txbDirectorLastName.Text == "")
@@ -48,6 +77,19 @@ namespace MovieManagementApplication
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
+        {
+            bool canUpdateDirector = CheckUserRoleForDirectorPage();
+            if (canUpdateDirector == true)
+            {
+                UpdateDirector();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được sửa director mới");
+            }
+        }
+
+        private void UpdateDirector()
         {
             int directorId = Convert.ToInt32(txbDirectorId.Text);
 
@@ -84,6 +126,19 @@ namespace MovieManagementApplication
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
+        {
+            bool canDeleteDirector = CheckUserRoleForDirectorPage();
+            if (canDeleteDirector == true)
+            {
+                DeleteDirector();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được xoá director mới");
+            }
+        }
+
+        private void DeleteDirector()
         {
             int directorId = Convert.ToInt32(txbDirectorId.Text);
 

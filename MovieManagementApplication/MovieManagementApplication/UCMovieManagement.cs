@@ -20,13 +20,41 @@ namespace MovieManagementApplication
             dataGridViewMovie.DataSource = movies;
         }
 
+        public bool CheckUserRoleForMoviePage()
+        {
+            UserType userType = Constants.GetUserType();
+            switch (userType)
+            {
+                case UserType.Admin:
+                    return true;
+
+                case UserType.Reviewer:
+                case UserType.Actor:
+                case UserType.Director:
+                default:
+                    return false;
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (CheckUserRoleForMoviePage())
+            {
+                AddMovie();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được thêm movie mới");
+            }
+        }
+
+        private void AddMovie()
+        {
             if (txbMovieTitle.Text == ""
-                || txbMovieYear.Text == ""
-                || txbMovieReleaseCountry.Text == ""
-                || txbMovieTime.Text == ""
-                || txbMovieLanguage.Text == "")
+                            || txbMovieYear.Text == ""
+                            || txbMovieReleaseCountry.Text == ""
+                            || txbMovieTime.Text == ""
+                            || txbMovieLanguage.Text == "")
             {
                 MessageBox.Show("Thông tin chưa đủ");
             }
@@ -54,6 +82,18 @@ namespace MovieManagementApplication
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForMoviePage())
+            {
+                UpdateMovie();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được sửa movie mới");
+            }
+        }
+
+        private void UpdateMovie()
         {
             int movieId = Convert.ToInt32(txbMovieId.Text);
 
@@ -97,6 +137,18 @@ namespace MovieManagementApplication
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForMoviePage())
+            {
+                DeleteMovie();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được xoá movie");
+            }
+        }
+
+        private void DeleteMovie()
         {
             int movieId = Convert.ToInt32(txbMovieId.Text);
 

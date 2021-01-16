@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             this.tabControlMenu = new System.Windows.Forms.TabControl();
-            this.tabPageMenuRating = new System.Windows.Forms.TabPage();
-            this.labelUserName = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.ucActorManagement1 = new MovieManagementApplication.UCActorManagement();
             this.tabPageMenuActor = new System.Windows.Forms.TabPage();
-            this.ucDirectorManagement1 = new MovieManagementApplication.UCDirectorManagement();
+            this.ucActorManagement1 = new MovieManagementApplication.UCActorManagement();
             this.tabPageDirector = new System.Windows.Forms.TabPage();
-            this.ucMovieManagement1 = new MovieManagementApplication.UCMovieManagement();
+            this.ucDirectorManagement1 = new MovieManagementApplication.UCDirectorManagement();
+            this.tabPageMenuRating = new System.Windows.Forms.TabPage();
             this.tabPageMenuMovie = new System.Windows.Forms.TabPage();
-            this.ucGenresManagement1 = new MovieManagementApplication.UCGenresManagement();
+            this.ucMovieManagement1 = new MovieManagementApplication.UCMovieManagement();
             this.tabPageGenres = new System.Windows.Forms.TabPage();
+            this.ucGenresManagement1 = new MovieManagementApplication.UCGenresManagement();
+            this.labelUserName = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ucRatingManagement1 = new MovieManagementApplication.UCRatingManagement();
             this.tabControlMenu.SuspendLayout();
             this.tabPageMenuActor.SuspendLayout();
             this.tabPageDirector.SuspendLayout();
+            this.tabPageMenuRating.SuspendLayout();
             this.tabPageMenuMovie.SuspendLayout();
             this.tabPageGenres.SuspendLayout();
             this.SuspendLayout();
@@ -59,33 +61,6 @@
             this.tabControlMenu.Size = new System.Drawing.Size(1020, 576);
             this.tabControlMenu.TabIndex = 0;
             // 
-            // tabPageMenuRating
-            // 
-            this.tabPageMenuRating.Location = new System.Drawing.Point(4, 22);
-            this.tabPageMenuRating.Name = "tabPageMenuRating";
-            this.tabPageMenuRating.Size = new System.Drawing.Size(1012, 550);
-            this.tabPageMenuRating.TabIndex = 3;
-            this.tabPageMenuRating.Text = "Quản lý Rating";
-            this.tabPageMenuRating.UseVisualStyleBackColor = true;
-            // 
-            // labelUserName
-            // 
-            this.labelUserName.AutoSize = true;
-            this.labelUserName.Location = new System.Drawing.Point(716, 29);
-            this.labelUserName.Name = "labelUserName";
-            this.labelUserName.Size = new System.Drawing.Size(103, 13);
-            this.labelUserName.TabIndex = 1;
-            this.labelUserName.Text = "bunifuCustomLabel1";
-            // 
-            // ucActorManagement1
-            // 
-            this.ucActorManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ucActorManagement1.Location = new System.Drawing.Point(8, 6);
-            this.ucActorManagement1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucActorManagement1.Name = "ucActorManagement1";
-            this.ucActorManagement1.Size = new System.Drawing.Size(1000, 500);
-            this.ucActorManagement1.TabIndex = 0;
-            // 
             // tabPageMenuActor
             // 
             this.tabPageMenuActor.Controls.Add(this.ucActorManagement1);
@@ -97,13 +72,14 @@
             this.tabPageMenuActor.Text = "Quản lý Actor";
             this.tabPageMenuActor.UseVisualStyleBackColor = true;
             // 
-            // ucDirectorManagement1
+            // ucActorManagement1
             // 
-            this.ucDirectorManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ucDirectorManagement1.Location = new System.Drawing.Point(3, 3);
-            this.ucDirectorManagement1.Name = "ucDirectorManagement1";
-            this.ucDirectorManagement1.Size = new System.Drawing.Size(1000, 500);
-            this.ucDirectorManagement1.TabIndex = 0;
+            this.ucActorManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ucActorManagement1.Location = new System.Drawing.Point(8, 6);
+            this.ucActorManagement1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucActorManagement1.Name = "ucActorManagement1";
+            this.ucActorManagement1.Size = new System.Drawing.Size(1000, 500);
+            this.ucActorManagement1.TabIndex = 0;
             // 
             // tabPageDirector
             // 
@@ -115,14 +91,23 @@
             this.tabPageDirector.Text = "Quản lý Director";
             this.tabPageDirector.UseVisualStyleBackColor = true;
             // 
-            // ucMovieManagement1
+            // ucDirectorManagement1
             // 
-            this.ucMovieManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ucMovieManagement1.Location = new System.Drawing.Point(6, 6);
-            this.ucMovieManagement1.Margin = new System.Windows.Forms.Padding(4);
-            this.ucMovieManagement1.Name = "ucMovieManagement1";
-            this.ucMovieManagement1.Size = new System.Drawing.Size(1000, 500);
-            this.ucMovieManagement1.TabIndex = 0;
+            this.ucDirectorManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ucDirectorManagement1.Location = new System.Drawing.Point(3, 3);
+            this.ucDirectorManagement1.Name = "ucDirectorManagement1";
+            this.ucDirectorManagement1.Size = new System.Drawing.Size(1000, 500);
+            this.ucDirectorManagement1.TabIndex = 0;
+            // 
+            // tabPageMenuRating
+            // 
+            this.tabPageMenuRating.Controls.Add(this.ucRatingManagement1);
+            this.tabPageMenuRating.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMenuRating.Name = "tabPageMenuRating";
+            this.tabPageMenuRating.Size = new System.Drawing.Size(1012, 550);
+            this.tabPageMenuRating.TabIndex = 3;
+            this.tabPageMenuRating.Text = "Quản lý Rating";
+            this.tabPageMenuRating.UseVisualStyleBackColor = true;
             // 
             // tabPageMenuMovie
             // 
@@ -135,14 +120,14 @@
             this.tabPageMenuMovie.Text = "Quản lý Movie";
             this.tabPageMenuMovie.UseVisualStyleBackColor = true;
             // 
-            // ucGenresManagement1
+            // ucMovieManagement1
             // 
-            this.ucGenresManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.ucGenresManagement1.Location = new System.Drawing.Point(4, 4);
-            this.ucGenresManagement1.Margin = new System.Windows.Forms.Padding(2);
-            this.ucGenresManagement1.Name = "ucGenresManagement1";
-            this.ucGenresManagement1.Size = new System.Drawing.Size(1004, 542);
-            this.ucGenresManagement1.TabIndex = 0;
+            this.ucMovieManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ucMovieManagement1.Location = new System.Drawing.Point(6, 6);
+            this.ucMovieManagement1.Margin = new System.Windows.Forms.Padding(4);
+            this.ucMovieManagement1.Name = "ucMovieManagement1";
+            this.ucMovieManagement1.Size = new System.Drawing.Size(1000, 500);
+            this.ucMovieManagement1.TabIndex = 0;
             // 
             // tabPageGenres
             // 
@@ -155,6 +140,32 @@
             this.tabPageGenres.TabIndex = 4;
             this.tabPageGenres.Text = "Quản lý Genres";
             this.tabPageGenres.UseVisualStyleBackColor = true;
+            // 
+            // ucGenresManagement1
+            // 
+            this.ucGenresManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ucGenresManagement1.Location = new System.Drawing.Point(4, 4);
+            this.ucGenresManagement1.Margin = new System.Windows.Forms.Padding(2);
+            this.ucGenresManagement1.Name = "ucGenresManagement1";
+            this.ucGenresManagement1.Size = new System.Drawing.Size(1004, 542);
+            this.ucGenresManagement1.TabIndex = 0;
+            // 
+            // labelUserName
+            // 
+            this.labelUserName.AutoSize = true;
+            this.labelUserName.Location = new System.Drawing.Point(716, 29);
+            this.labelUserName.Name = "labelUserName";
+            this.labelUserName.Size = new System.Drawing.Size(103, 13);
+            this.labelUserName.TabIndex = 1;
+            this.labelUserName.Text = "bunifuCustomLabel1";
+            // 
+            // ucRatingManagement1
+            // 
+            this.ucRatingManagement1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ucRatingManagement1.Location = new System.Drawing.Point(0, 3);
+            this.ucRatingManagement1.Name = "ucRatingManagement1";
+            this.ucRatingManagement1.Size = new System.Drawing.Size(1000, 500);
+            this.ucRatingManagement1.TabIndex = 0;
             // 
             // MenuForm
             // 
@@ -173,6 +184,7 @@
             this.tabControlMenu.ResumeLayout(false);
             this.tabPageMenuActor.ResumeLayout(false);
             this.tabPageDirector.ResumeLayout(false);
+            this.tabPageMenuRating.ResumeLayout(false);
             this.tabPageMenuMovie.ResumeLayout(false);
             this.tabPageGenres.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -193,5 +205,6 @@
         private UCMovieManagement ucMovieManagement1;
         private System.Windows.Forms.TabPage tabPageGenres;
         private UCGenresManagement ucGenresManagement1;
+        private UCRatingManagement ucRatingManagement1;
     }
 }

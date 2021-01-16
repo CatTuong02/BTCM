@@ -51,10 +51,10 @@ namespace MovieManagementApplication
         private void AddMovie()
         {
             if (txbMovieTitle.Text == ""
-                            || txbMovieYear.Text == ""
-                            || txbMovieReleaseCountry.Text == ""
-                            || txbMovieTime.Text == ""
-                            || txbMovieLanguage.Text == "")
+                || txbMovieYear.Text == ""
+                || txbMovieReleaseCountry.Text == ""            
+                || txbMovieTime.Text == ""
+                || txbMovieLanguage.Text == "")
             {
                 MessageBox.Show("Thông tin chưa đủ");
             }
@@ -68,6 +68,8 @@ namespace MovieManagementApplication
                 movie.mov_time = Convert.ToInt32(txbMovieTime.Text);
                 movie.mov_lang = txbMovieLanguage.Text;
                 movie.mov_dt_rel = dpMovieReleaseDate.Value;
+                movie.mov_image = txbMovieImage.Text;
+
                 db.movies.Add(movie);
                 db.SaveChanges();
 
@@ -122,6 +124,7 @@ namespace MovieManagementApplication
                         movie.mov_time = Convert.ToInt32(txbMovieTime.Text);
                         movie.mov_lang = txbMovieLanguage.Text;
                         movie.mov_dt_rel = dpMovieReleaseDate.Value;
+                        movie.mov_image = txbMovieImage.Text;
 
                         db.SaveChanges();
                         MessageBox.Show("Sửa thành công");
@@ -196,6 +199,17 @@ namespace MovieManagementApplication
                 dpMovieReleaseDate.Value = DateTime.Parse(row.Cells[5].Value.ToString());
 
                 txbMovieReleaseCountry.Text = row.Cells[6].Value.ToString();
+            }
+        }
+
+        private void btnSelectMovieImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txbMovieImage.Text = open.FileName;
             }
         }
     }

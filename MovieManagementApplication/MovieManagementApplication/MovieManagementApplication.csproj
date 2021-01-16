@@ -138,6 +138,12 @@
     <Compile Include="UCMovieManagement.Designer.cs">
       <DependentUpon>UCMovieManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCRatingManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCRatingManagement.Designer.cs">
+      <DependentUpon>UCRatingManagement.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UCMovieManagement.resx">
       <DependentUpon>UCMovieManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCRatingManagement.resx">
+      <DependentUpon>UCRatingManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Database\DBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

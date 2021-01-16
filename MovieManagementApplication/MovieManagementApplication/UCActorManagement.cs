@@ -9,6 +9,7 @@ namespace MovieManagementApplication
     public partial class UCActorManagement : UserControl
     {
         private readonly MovieEntities db = new MovieEntities();
+
         public UCActorManagement()
         {
             InitializeComponent();
@@ -116,6 +117,7 @@ namespace MovieManagementApplication
                 actor.act_fname = txbActorFirstName.Text;
                 actor.act_lname = txbActorLastName.Text;
                 actor.act_gender = cbbActorGender.selectedValue;
+                actor.act_image = txbActorImage.Text;
                 db.actors.Add(actor);
                 db.SaveChanges();
 
@@ -123,7 +125,7 @@ namespace MovieManagementApplication
 
                 ReloadDataGird();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("Thêm actor thất bại");
             }
@@ -153,13 +155,14 @@ namespace MovieManagementApplication
                         actor.act_fname = txbActorFirstName.Text;
                         actor.act_lname = txbActorLastName.Text;
                         actor.act_gender = cbbActorGender.selectedValue;
+                        actor.act_image = txbActorImage.Text;
 
                         db.SaveChanges();
                         MessageBox.Show("Sửa thành công");
 
                         ReloadDataGird();
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Sửa không thành công");
                     }
@@ -187,10 +190,21 @@ namespace MovieManagementApplication
 
                     ReloadDataGird();
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Xoá không thành công");
                 }
+            }
+        }
+
+        private void btnSelectActorImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txbActorImage.Text = open.FileName;
             }
         }
     }

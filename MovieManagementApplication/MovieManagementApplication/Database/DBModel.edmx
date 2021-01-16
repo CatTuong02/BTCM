@@ -13,7 +13,7 @@
           <Property Name="act_fname" Type="varchar" MaxLength="20" />
           <Property Name="act_lname" Type="varchar" MaxLength="20" />
           <Property Name="act_gender" Type="varchar" MaxLength="1" />
-          <Property Name="act_image" Type="varchar" MaxLength="1" />
+          <Property Name="act_image" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="director">
           <Key>
@@ -22,7 +22,7 @@
           <Property Name="dir_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dir_fname" Type="varchar" MaxLength="20" />
           <Property Name="dir_lname" Type="varchar" MaxLength="20" />
-          <Property Name="dir_image" Type="varchar" MaxLength="1" />
+          <Property Name="dir_image" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="genres">
           <Key>
@@ -42,7 +42,7 @@
           <Property Name="mov_lang" Type="varchar" MaxLength="50" />
           <Property Name="mov_dt_rel" Type="date" />
           <Property Name="mov_rel_country" Type="varchar" MaxLength="5" />
-          <Property Name="mov_image" Type="varchar" MaxLength="1" />
+          <Property Name="mov_image" Type="nvarchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="movie_cast">
           <Key>
@@ -247,7 +247,7 @@
           <Property Name="act_fname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="act_lname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="act_gender" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="act_image" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="act_image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="movie_cast" Relationship="Self.FK__movie_cas__act_i__33D4B598" FromRole="actor" ToRole="movie_cast" />
         </EntityType>
         <EntityType Name="director">
@@ -257,7 +257,7 @@
           <Property Name="dir_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="dir_fname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="dir_lname" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="dir_image" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="dir_image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="movies" Relationship="Self.movie_direction" FromRole="director" ToRole="movie" />
         </EntityType>
         <EntityType Name="genre">
@@ -279,7 +279,7 @@
           <Property Name="mov_lang" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="mov_dt_rel" Type="DateTime" Precision="0" />
           <Property Name="mov_rel_country" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="mov_image" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="mov_image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="movie_cast" Relationship="Self.FK__movie_cas__mov_i__34C8D9D1" FromRole="movie" ToRole="movie_cast" />
           <NavigationProperty Name="ratings" Relationship="Self.FK__rating__mov_id__398D8EEE" FromRole="movie" ToRole="rating" />
           <NavigationProperty Name="directors" Relationship="Self.movie_direction" FromRole="movie" ToRole="director" />

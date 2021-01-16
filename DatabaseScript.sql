@@ -195,13 +195,13 @@ INSERT INTO rating (mov_id, rev_id, rev_stars, num_o_ratings) VALUES (4, 3, 3, 1
 
 
 --=> thêm cột hình ảnh vào bảng đạo diễn
-ALTER TABLE director ADD dir_image varchar;
+ALTER TABLE director ADD dir_image nvarchar(100);
 
 --=> thêm cột hình ảnh vào bảng diễn viên
-ALTER TABLE actor ADD act_image varchar;
+ALTER TABLE actor ADD act_image nvarchar(100);
 
 --=> thêm cột hình ảnh vào bảng phim
-ALTER TABLE movie ADD mov_image varchar;
+ALTER TABLE movie ADD mov_image nvarchar(100);
 GO
 
 -- Tao bảng user
@@ -219,3 +219,4 @@ INSERT INTO users (user_name, user_password, user_type) VALUES ('admin', 'admin'
 INSERT INTO users (user_name, user_password, user_type) VALUES ('reviewer', 'reviewer', 'reviewer')
 INSERT INTO users (user_name, user_password, user_type) VALUES ('director', 'director', 'director')
 INSERT INTO users (user_name, user_password, user_type) VALUES ('actor', 'actor', 'actor')
+

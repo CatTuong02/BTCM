@@ -62,6 +62,7 @@ namespace MovieManagementApplication
                 director director = new director();
                 director.dir_fname = txbDirectorFirstName.Text;
                 director.dir_lname = txbDirectorLastName.Text;
+                director.dir_image = txbDirectorImage.Text;
 
                 db.directors.Add(director);
                 db.SaveChanges();
@@ -111,6 +112,7 @@ namespace MovieManagementApplication
                     {
                         director.dir_fname = txbDirectorFirstName.Text;
                         director.dir_lname = txbDirectorLastName.Text;
+                        director.dir_image = txbDirectorImage.Text;
 
                         db.SaveChanges();
                         MessageBox.Show("Sửa thành công");
@@ -180,6 +182,17 @@ namespace MovieManagementApplication
                 txbDirectorId.Text = row.Cells[0].Value.ToString();
                 txbDirectorFirstName.Text = row.Cells[1].Value.ToString();
                 txbDirectorLastName.Text = row.Cells[2].Value.ToString();
+            }
+        }
+
+        private void btnSelectDirectorImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txbDirectorImage.Text = open.FileName;
             }
         }
     }

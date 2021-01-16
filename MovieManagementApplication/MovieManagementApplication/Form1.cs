@@ -26,9 +26,9 @@ namespace MovieManagementApplication
             {
                 MessageBox.Show("Đăng nhập thành công");
 
+                Constants.currentUser = user;
+
                 MenuForm menuForm = new MenuForm();
-                menuForm.avatarPath = user.user_avatar;
-                menuForm.userName = user.user_name;
                 menuForm.CloseAction = () =>
                 {
                     menuForm.Close();
@@ -79,12 +79,9 @@ namespace MovieManagementApplication
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình hay không?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
     }
 }

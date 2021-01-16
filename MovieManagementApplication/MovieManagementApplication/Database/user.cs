@@ -18,6 +18,5 @@ namespace MovieManagementApplication.Database
         public string user_name { get; set; }
         public string user_password { get; set; }
         public string user_type { get; set; }
-        public string user_avatar { get; set; }
     }
 }

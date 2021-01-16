@@ -13,8 +13,6 @@ namespace MovieManagementApplication
     public partial class MenuForm : Form
     {
         public Action CloseAction;
-        public string avatarPath;
-        public string userName;
 
         public MenuForm()
         {
@@ -23,7 +21,7 @@ namespace MovieManagementApplication
 
         private void InitUI()
         {
-            labelUserName.Text = userName;
+            labelUserName.Text = Constants.currentUser.user_name;
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
@@ -31,12 +29,9 @@ namespace MovieManagementApplication
             InitUI();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void MenuForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn có muốn thoát chương trình hay không?", "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                Application.Exit();
-            }
+            Application.Exit();
         }
     }
 }

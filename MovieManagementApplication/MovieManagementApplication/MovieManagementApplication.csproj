@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
     <Compile Include="Database\actor.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -119,11 +120,29 @@
     <Compile Include="UCActorManagement.Designer.cs">
       <DependentUpon>UCActorManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="UCDirectorManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCDirectorManagement.Designer.cs">
+      <DependentUpon>UCDirectorManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCGenresManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCGenresManagement.Designer.cs">
+      <DependentUpon>UCGenresManagement.cs</DependentUpon>
+    </Compile>
     <Compile Include="UCMovieManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UCMovieManagement.Designer.cs">
       <DependentUpon>UCMovieManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UCRatingManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCRatingManagement.Designer.cs">
+      <DependentUpon>UCRatingManagement.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -143,8 +162,17 @@
     <EmbeddedResource Include="UCActorManagement.resx">
       <DependentUpon>UCActorManagement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UCDirectorManagement.resx">
+      <DependentUpon>UCDirectorManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCGenresManagement.resx">
+      <DependentUpon>UCGenresManagement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UCMovieManagement.resx">
       <DependentUpon>UCMovieManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCRatingManagement.resx">
+      <DependentUpon>UCRatingManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Database\DBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

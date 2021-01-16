@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0ecc3fe34fca4fa0966d34b2be521a95" Name="Diagram1" ZoomLevel="150">
-        <EntityTypeShape EntityType="movieModel.actor" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="movieModel.director" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="movieModel.genre" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="movieModel.movie" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="movieModel.movie_cast" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="movieModel.rating" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="movieModel.reviewer" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="movieModel.user" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
-        <AssociationConnector Association="movieModel.FK__movie_cas__act_i__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="movieModel.FK__movie_cas__mov_i__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="movieModel.FK__rating__mov_id__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="movieModel.FK__rating__rev_id__3A81B327" ManuallyRouted="false" />
-        <AssociationConnector Association="movieModel.movie_direction" ManuallyRouted="false" />
-        <AssociationConnector Association="movieModel.movie_genres" ManuallyRouted="false" />
+      <Diagram DiagramId="852297c9352a40ddbfbed8bd060ac390" Name="Diagram1">
+        <EntityTypeShape EntityType="MovieModel.actor" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieModel.director" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieModel.genre" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieModel.movie" Width="1.5" PointX="3" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieModel.movie_cast" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieModel.rating" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieModel.reviewer" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MovieModel.user" Width="1.5" PointX="5.75" PointY="7.125" IsExpanded="true" />
+        <AssociationConnector Association="MovieModel.FK__movie_cas__act_i__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieModel.FK__movie_cas__mov_i__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieModel.FK__rating__mov_id__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieModel.FK__rating__rev_id__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieModel.movie_direction" ManuallyRouted="false" />
+        <AssociationConnector Association="MovieModel.movie_genres" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

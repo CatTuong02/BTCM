@@ -20,11 +20,39 @@ namespace MovieManagementApplication
             dataGridViewMovie.DataSource = movies;
         }
 
+        public bool CheckUserRoleForMoviePage()
+        {
+            UserType userType = Constants.GetUserType();
+            switch (userType)
+            {
+                case UserType.Admin:
+                    return true;
+
+                case UserType.Reviewer:
+                case UserType.Actor:
+                case UserType.Director:
+                default:
+                    return false;
+            }
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForMoviePage())
+            {
+                AddMovie();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được thêm movie mới");
+            }
+        }
+
+        private void AddMovie()
         {
             if (txbMovieTitle.Text == ""
                 || txbMovieYear.Text == ""
-                || txbMovieReleaseCountry.Text == ""
+                || txbMovieReleaseCountry.Text == ""            
                 || txbMovieTime.Text == ""
                 || txbMovieLanguage.Text == "")
             {
@@ -40,6 +68,8 @@ namespace MovieManagementApplication
                 movie.mov_time = Convert.ToInt32(txbMovieTime.Text);
                 movie.mov_lang = txbMovieLanguage.Text;
                 movie.mov_dt_rel = dpMovieReleaseDate.Value;
+                movie.mov_image = txbMovieImage.Text;
+
                 db.movies.Add(movie);
                 db.SaveChanges();
 
@@ -54,6 +84,18 @@ namespace MovieManagementApplication
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForMoviePage())
+            {
+                UpdateMovie();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được sửa movie mới");
+            }
+        }
+
+        private void UpdateMovie()
         {
             int movieId = Convert.ToInt32(txbMovieId.Text);
 
@@ -82,6 +124,7 @@ namespace MovieManagementApplication
                         movie.mov_time = Convert.ToInt32(txbMovieTime.Text);
                         movie.mov_lang = txbMovieLanguage.Text;
                         movie.mov_dt_rel = dpMovieReleaseDate.Value;
+                        movie.mov_image = txbMovieImage.Text;
 
                         db.SaveChanges();
                         MessageBox.Show("Sửa thành công");
@@ -97,6 +140,18 @@ namespace MovieManagementApplication
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (CheckUserRoleForMoviePage())
+            {
+                DeleteMovie();
+            }
+            else
+            {
+                MessageBox.Show("Bạn không có quyền được xoá movie");
+            }
+        }
+
+        private void DeleteMovie()
         {
             int movieId = Convert.ToInt32(txbMovieId.Text);
 
@@ -144,6 +199,17 @@ namespace MovieManagementApplication
                 dpMovieReleaseDate.Value = DateTime.Parse(row.Cells[5].Value.ToString());
 
                 txbMovieReleaseCountry.Text = row.Cells[6].Value.ToString();
+            }
+        }
+
+        private void btnSelectMovieImage_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.png)|*.jpg; *.jpeg; *.png";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                txbMovieImage.Text = open.FileName;
             }
         }
     }

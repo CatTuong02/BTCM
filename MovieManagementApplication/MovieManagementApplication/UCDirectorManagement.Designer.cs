@@ -29,8 +29,8 @@ namespace MovieManagementApplication
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCDirectorManagement));
             this.label7 = new System.Windows.Forms.Label();
             this.txbDirectorId = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -52,9 +52,10 @@ namespace MovieManagementApplication
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(14, 23);
+            this.label7.Location = new System.Drawing.Point(19, 28);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(54, 13);
+            this.label7.Size = new System.Drawing.Size(71, 17);
             this.label7.TabIndex = 16;
             this.label7.Text = "Id director";
             // 
@@ -69,28 +70,30 @@ namespace MovieManagementApplication
             this.txbDirectorId.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbDirectorId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbDirectorId.isPassword = false;
-            this.txbDirectorId.Location = new System.Drawing.Point(7, 40);
-            this.txbDirectorId.Margin = new System.Windows.Forms.Padding(4);
+            this.txbDirectorId.Location = new System.Drawing.Point(9, 49);
+            this.txbDirectorId.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbDirectorId.Name = "txbDirectorId";
-            this.txbDirectorId.Size = new System.Drawing.Size(80, 44);
+            this.txbDirectorId.Size = new System.Drawing.Size(107, 54);
             this.txbDirectorId.TabIndex = 15;
             this.txbDirectorId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(116, 23);
+            this.label2.Location = new System.Drawing.Point(155, 28);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(74, 17);
             this.label2.TabIndex = 10;
             this.label2.Text = "First name";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(315, 25);
+            this.label1.Location = new System.Drawing.Point(420, 31);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 13);
+            this.label1.Size = new System.Drawing.Size(74, 17);
             this.label1.TabIndex = 9;
             this.label1.Text = "Last name";
             // 
@@ -104,10 +107,10 @@ namespace MovieManagementApplication
             this.txbDirectorLastName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbDirectorLastName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbDirectorLastName.isPassword = false;
-            this.txbDirectorLastName.Location = new System.Drawing.Point(309, 42);
-            this.txbDirectorLastName.Margin = new System.Windows.Forms.Padding(4);
+            this.txbDirectorLastName.Location = new System.Drawing.Point(412, 52);
+            this.txbDirectorLastName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbDirectorLastName.Name = "txbDirectorLastName";
-            this.txbDirectorLastName.Size = new System.Drawing.Size(180, 44);
+            this.txbDirectorLastName.Size = new System.Drawing.Size(240, 54);
             this.txbDirectorLastName.TabIndex = 8;
             this.txbDirectorLastName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -121,10 +124,10 @@ namespace MovieManagementApplication
             this.txbDirectorFirstName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.txbDirectorFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.txbDirectorFirstName.isPassword = false;
-            this.txbDirectorFirstName.Location = new System.Drawing.Point(110, 40);
-            this.txbDirectorFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.txbDirectorFirstName.Location = new System.Drawing.Point(147, 49);
+            this.txbDirectorFirstName.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txbDirectorFirstName.Name = "txbDirectorFirstName";
-            this.txbDirectorFirstName.Size = new System.Drawing.Size(180, 44);
+            this.txbDirectorFirstName.Size = new System.Drawing.Size(240, 54);
             this.txbDirectorFirstName.TabIndex = 1;
             this.txbDirectorFirstName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
@@ -133,13 +136,15 @@ namespace MovieManagementApplication
             this.dataGridViewDirector.AllowUserToAddRows = false;
             this.dataGridViewDirector.AllowUserToDeleteRows = false;
             this.dataGridViewDirector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDirector.Location = new System.Drawing.Point(3, 215);
+            this.dataGridViewDirector.Location = new System.Drawing.Point(4, 265);
+            this.dataGridViewDirector.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewDirector.MultiSelect = false;
             this.dataGridViewDirector.Name = "dataGridViewDirector";
             this.dataGridViewDirector.ReadOnly = true;
             this.dataGridViewDirector.RowHeadersWidth = 51;
-            this.dataGridViewDirector.Size = new System.Drawing.Size(994, 282);
+            this.dataGridViewDirector.Size = new System.Drawing.Size(1325, 347);
             this.dataGridViewDirector.TabIndex = 11;
+            this.dataGridViewDirector.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDirector_CellContentClick);
             // 
             // groupBox1
             // 
@@ -149,38 +154,41 @@ namespace MovieManagementApplication
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txbDirectorLastName);
             this.groupBox1.Controls.Add(this.txbDirectorFirstName);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
+            this.groupBox1.Location = new System.Drawing.Point(4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(732, 167);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(976, 206);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin Director";
             // 
             // bunifuCustomDataGrid2
             // 
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.bunifuCustomDataGrid2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.bunifuCustomDataGrid2.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.bunifuCustomDataGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.bunifuCustomDataGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.bunifuCustomDataGrid2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.bunifuCustomDataGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.bunifuCustomDataGrid2.DoubleBuffered = true;
             this.bunifuCustomDataGrid2.EnableHeadersVisualStyles = false;
             this.bunifuCustomDataGrid2.HeaderBgColor = System.Drawing.Color.SeaGreen;
             this.bunifuCustomDataGrid2.HeaderForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(618, 105);
+            this.bunifuCustomDataGrid2.Location = new System.Drawing.Point(824, 129);
+            this.bunifuCustomDataGrid2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.bunifuCustomDataGrid2.Name = "bunifuCustomDataGrid2";
             this.bunifuCustomDataGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.bunifuCustomDataGrid2.RowHeadersWidth = 51;
-            this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(8, 8);
+            this.bunifuCustomDataGrid2.Size = new System.Drawing.Size(11, 10);
             this.bunifuCustomDataGrid2.TabIndex = 10;
             // 
             // btnDelete
@@ -201,10 +209,10 @@ namespace MovieManagementApplication
             this.btnDelete.IdleFillColor = System.Drawing.Color.White;
             this.btnDelete.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnDelete.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnDelete.Location = new System.Drawing.Point(743, 145);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(5);
+            this.btnDelete.Location = new System.Drawing.Point(991, 178);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(181, 41);
+            this.btnDelete.Size = new System.Drawing.Size(241, 50);
             this.btnDelete.TabIndex = 9;
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -216,7 +224,7 @@ namespace MovieManagementApplication
             this.btnEdit.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnEdit.ActiveForecolor = System.Drawing.Color.White;
             this.btnEdit.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnEdit.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.ButtonText = "Sửa";
             this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -227,10 +235,10 @@ namespace MovieManagementApplication
             this.btnEdit.IdleFillColor = System.Drawing.Color.White;
             this.btnEdit.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnEdit.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnEdit.Location = new System.Drawing.Point(743, 94);
-            this.btnEdit.Margin = new System.Windows.Forms.Padding(5);
+            this.btnEdit.Location = new System.Drawing.Point(991, 116);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(181, 41);
+            this.btnEdit.Size = new System.Drawing.Size(241, 50);
             this.btnEdit.TabIndex = 8;
             this.btnEdit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
@@ -242,7 +250,7 @@ namespace MovieManagementApplication
             this.btnAdd.ActiveFillColor = System.Drawing.Color.SeaGreen;
             this.btnAdd.ActiveForecolor = System.Drawing.Color.White;
             this.btnAdd.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.ButtonText = "Thêm";
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -253,17 +261,17 @@ namespace MovieManagementApplication
             this.btnAdd.IdleFillColor = System.Drawing.Color.White;
             this.btnAdd.IdleForecolor = System.Drawing.Color.SeaGreen;
             this.btnAdd.IdleLineColor = System.Drawing.Color.SeaGreen;
-            this.btnAdd.Location = new System.Drawing.Point(743, 43);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(5);
+            this.btnAdd.Location = new System.Drawing.Point(991, 53);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(181, 41);
+            this.btnAdd.Size = new System.Drawing.Size(241, 50);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // UCDirectorManagement
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.Controls.Add(this.dataGridViewDirector);
@@ -272,8 +280,9 @@ namespace MovieManagementApplication
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UCDirectorManagement";
-            this.Size = new System.Drawing.Size(1000, 500);
+            this.Size = new System.Drawing.Size(1333, 615);
             this.Load += new System.EventHandler(this.UCDirectorManagement_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDirector)).EndInit();
             this.groupBox1.ResumeLayout(false);
